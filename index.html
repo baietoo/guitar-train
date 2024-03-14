@@ -8,24 +8,8 @@
     <title>Guitar Train</title>
     <meta name="author" content="Catalin Circu">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="shortcut icon" href="/resurse/imagini/favicon.ico" type="image/x-icon"/>-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-
-
-    <!-- <link rel="stylesheet" href="resurse/css/general.css" type="text/css" />
-    <link rel="stylesheet" href="resurse/css/general1000.css" type="text/css" media="screen and (max-width:1000px)" />
-    <link rel="stylesheet" href="resurse/css/general700.css" type="text/css" media="screen and (max-width:700px)" />
-
-    <link rel="stylesheet" href="resurse/css/layout.css" type="text/css" />
-
-    <link rel="stylesheet" href="resurse/css/nav.css" type="text/css" />
-
-    <link rel="stylesheet" href="resurse/css/nav1000.css" type="text/css" media="screen and (max-width:1000px)" />
-
-    <link rel="stylesheet" href="resurse/css/nav700.css" type="text/css" media="screen and (max-width:700px)" /> -->
-
     <link rel="stylesheet" href="resurse/css/stil.css" type="text/css" />
-
     <!-- FAVICON -->
     <link rel="apple-touch-icon" sizes="180x180" href="/resurse/ico/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/resurse/ico/favicon-32x32.png">
@@ -36,15 +20,23 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="/resurse/ico/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <!-- apply font to page -->
 </head>
 
 <body>
 
     <header class="c1" id="h1">
-        <h1>Guitar <span>Train</span></h1>
+        <h1><i id="chitara" class="fa-solid fa-guitar"></i> Guitar <span>Train </span></h1>
 
     </header>
-    <nav>
+    <!-- <nav>
 
         <label id="hamburger" for="ch-menu">
             <img src="resurse/imagini/Hamburger_icon.svg" alt="menu">
@@ -86,37 +78,28 @@
             </li>
             <li><a href="#">Contact</a></li>
         </ul>
-    </nav>
+    </nav> -->
     <main>
         <div id="grid-pagina">
             <section id="welcome">
-                <h2>Bine ati venit</h2>
+                <h2>
+                    <i class="fa-solid fa-heart fa-beat"></i>
+                    BINE ATI VENIT!
+                    <i class="fa-solid fa-heart fa-beat"></i>
+                </h2>
                 <p class="intro">Vă mulțumim că ne vizitați site-ul. Downloadati de <a
                         href="resurse/fisiere/cartea-chitara-acustica.pdf" download>AICI</a> cartea gratis pentru
                     chitara
                     acustica. Spor la invatat!</p>
                 <div class="intro-oferte">
-                    <div>Chitare</div>
-                    <div>Bass</div>
-                    <div>Percutie</div>
-                    <div>Amplificatoare</div>
-                    <div>DJ</div>
+                    <p>Chitare</p>
+                    <p>Bass</p>
+                    <p>Percutie</p>
+                    <p>Amplificatoare</p>
+                    <p>DJ</p>
                 </div>
                 <p class="anunt intro">Instrumentele se pot vedea/testa in showroom-ul nostru, sau puteti comanda direct
                     acasa.</p>
-                <div id="dv-prezentare-1">
-                    <div id="dv-prezentare">
-                        <figure>
-                            <picture>
-                                <!-- il ia pe primul care se potriveste cu query-ul din media-->
-                                <!-- <source srcset="resurse/imagini/monkey-3507317_640.jpg" media="(max-width:700px)" /> -->
-                                <!-- <source srcset="resurse/imagini/monkey-3507317_1280.jpg" media="(max-width:1200px)" /> -->
-                                <!-- <img src="resurse/imagini/monkey-3507317_1920.jpg" alt="text" title="Maimuta" /> -->
-                            </picture>
-                            <figcaption>Chitara</figcaption>
-                        </figure>
-                    </div>
-                </div>
                 <hr />
                 <div id="container-video">
                     <div id="centrare-video">
@@ -137,206 +120,121 @@
                     </div>
                 </div>
             </section>
-            <section id="promotii">
-                <h2>Promoții</h2>
-                <article>
-                    <h3 class="titlu">Super ofertă de weekend</h3>
-                    <p><b>Guitar Train</b> oferă <b>reduceri de <s>5%</s> <ins datetime="2024-03-19">15%</ins></b>
-                        pentru toate produsele cumpărate în intervalul
-                        10-14.</p>
-                    <p>Oferta este valabilă doar în zilele de sâmbătă și duminică la sediile <abbr
-                            title="Guitar Train">GT</abbr>.</p>
-                    <p>în cazul în care cumpărați de mai mult de 1000 RON primiți si un card de fidelitate pentru!</p>
-                </article>
-                <article>
-                    <h3>Oferte</h3>
-                    <p>Guitar Train oferă pachete cuprinzând:</p>
-                    <ol>
-                        <li><i lang="en">Gibson Guitars 1 + 1</i></li>
-                        <li>Un set de 4 bete marca Korn</li>
-                        <li>O carte la alegere</li>
-                    </ol>
 
-                </article>
-                <article>
-                    <h3 class="titlu bcd">Full Combo Chitara</h3>
-
-                    <p>Cum zicea <a href="https://en.wikipedia.org/wiki/Einstein" target="_blank">Einstein</a>
-                        <q>
-                            <math>
-                                <mi>E</mi>
-                                <mo>=</mo>
-                                <mi>M</mi>
-                                <mi>C</mi>
-                                <msup>
-                                    <mn>2</mn>
-                                </msup>
-                            </math>
-                        </q>
-                        Dar noi nu stim din astea asa ca E = Chitara si amplificator la noi.
-                    </p>
-                    <ol>
-                        <li>Chitara Fender Stratocaster.</li>
-                        <li>Amplificator Marshall</li>
-                        <li>Pene de la Dunlop</li>
-                    </ol>
-
-                </article>
-                <article>
-                    <h3>TOBE TOBE TOBE</h3>
-                    <p>Avem tobe <abbr title="Pearl">Pearl</abbr> la preturi imbatabile!
-                        Cumparati un set si primiti:</p>
-                    <ol>
-                        <li>Huse.</li>
-                        <li>Pedala dubla pentru stilul mai dur.</li>
-                        <li>Podea dubla cu izolare fonica. </li>
-                    </ol>
-
-                </article>
-                <section>
-                    <h3>Click pt o surpriza!</h3>
-                </section>
-            </section>
-            <section id="produse">
-                <h2>Produsele noastre</h2>
-                <p>Avem ultimele tendinte in materie de instrumente.</p>
-                <section>
-                    <h3>Chitare</h3>
-                    <p>dispobibile in urmaotarele variante:</p>
-                    <ul>
-                        <li>6 corzi</li>
-                        <li>7 corzi</li>
-                        <li>8 corzi</li>
-                        <li>bariton</li>
-                        <li>acustica</li>
-                        <li>electrica</li>
-                    </ul>
-                </section>
-                <section>
-                    <h3>Bass</h3>
-                    <p>Variante:</p>
-                    <ul>
-                        <li>4 corzi</li>
-                        <li>5 corzi</li>
-                        <li>4, 5 corzi acustic</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Tobe</h3>
-                    <p>Kituri variate:</p>
-                    <ul>
-                        <li>Heavy metal</li>
-                        <li>Rock</li>
-                        <li>Punk</li>
-                        <li>Clasic</li>
-                    </ul>
-                </section>
-            </section>
             <section id="orar">
                 <h2>Orar</h2>
-                <table id="tab-orar">
-                    <thead>
-                        <tr>
-                            <th>Cod</th>
-                            <th>Perioadă</th>
-                            <th>Zi</th>
-                            <th>Interval dimineata</th>
-                            <th>Pauza de masa</th>
-                            <th>Interval seară</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td rowspan="5">Zile<br />Lucrătoare</td>
-                            <td>Luni</td>
-                            <td>10-12</td>
-                            <td>12-14</td>
-                            <td>14-20</td>
-                        </tr>
-                        <tr>
-                            <td></td>
+                <div style="overflow-x: auto;" class="div-orar">
+                    <table id="tab-orar">
+                        <thead>
+                            <tr>
+                                <th>Cod</th>
+                                <th>Perioadă</th>
+                                <th>Zi</th>
+                                <th>Interval dimineata</th>
+                                <th>Pauza de masa</th>
+                                <th>Interval seară</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td rowspan="5">Zile<br />Lucrătoare</td>
+                                <td>Luni</td>
+                                <td>10-12</td>
+                                <td>12-14</td>
+                                <td>14-20</td>
+                            </tr>
+                            <tr>
+                                <td></td>
 
-                            <td>Marti</td>
-                            <td>9-12</td>
-                            <td>12-14</td>
-                            <td>14-21</td>
-                        </tr>
-                        <tr>
-                            <td></td>
+                                <td>Marti</td>
+                                <td>9-12</td>
+                                <td>12-14</td>
+                                <td>14-21</td>
+                            </tr>
+                            <tr>
+                                <td></td>
 
-                            <td>Miercuri</td>
-                            <td>9-11</td>
-                            <td>11-13</td>
-                            <td>14-21</td>
-                        </tr>
-                        <tr>
-                            <td></td>
+                                <td>Miercuri</td>
+                                <td>9-11</td>
+                                <td>11-13</td>
+                                <td>14-21</td>
+                            </tr>
+                            <tr>
+                                <td></td>
 
-                            <td>Joi</td>
-                            <td>9-11</td>
-                            <td>11-13</td>
-                            <td>14-21</td>
-                        </tr>
-                        <tr>
-                            <td></td>
+                                <td>Joi</td>
+                                <td>9-11</td>
+                                <td>11-13</td>
+                                <td>14-21</td>
+                            </tr>
+                            <tr>
+                                <td></td>
 
-                            <td>Vineri</td>
-                            <td>9-12</td>
-                            <td>12-14</td>
-                            <td>14-19</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td rowspan="2">Weekend</td>
-                            <td>Sambata</td>
-                            <td>10-12</td>
-                            <td>12-13</td>
-                            <td>13-16</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Duminica</td>
-                            <td>10-14</td>
-                            <td>-</td>
-                            <td>inchis</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="6">Închis cu ocazia sărbătorilor legale.</td>
-                        </tr>
-                    </tfoot>
-                </table>
+                                <td>Vineri</td>
+                                <td>9-12</td>
+                                <td>12-14</td>
+                                <td>14-19</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td rowspan="2">Weekend</td>
+                                <td>Sambata</td>
+                                <td>10-12</td>
+                                <td>12-13</td>
+                                <td>13-16</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Duminica</td>
+                                <td>10-14</td>
+                                <td>-</td>
+                                <td>inchis</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6">Închis cu ocazia sărbătorilor legale.</td>
+                            </tr>
+                        </tfoot>
+                        <!-- table caption -->
+                        <caption>Orarul de funcționare al magazinului</caption>
+                    </table>
+                </div>
             </section>
-            <!-- <figure id="fig1" class="fg-img">
-                <img src="resurse/imagini/guitar-2119_1280.jpg" alt="chitara">
-                <figcaption>Chitara Acustica</figcaption>
-            </figure> -->
-            <figure id="fig2" class="fg-img">
-                <!-- <img src="resurse/imagini/guitar-2925274_1280.jpg" alt="chitara electrica"> -->
-                <figcaption>Chitara Electrica</figcaption>
-            </figure>
-            <!-- <figure id="fig3" class="fg-img">
-                <img src="resurse/imagini/bass-guitar-913092_1280.jpg" alt="bass">
-                <figcaption>Chitara Bass</figcaption>
-            </figure> -->
+
             <section id="tutoriale">
-                <h2>tutoriale</h2>
+                <h2>Tutoriale</h2>
                 <p>Invatati ceva rapid pentru a va satisface nevoile muzicale</p>
                 <div class="taburi-iframe">
                     <a href="https://www.youtube.com/embed/o8wM8inaqmo" target="ifr-video">Tutorial Chitara</a>
                     <a href="https://www.youtube.com/embed/QoMHDn1cvdk" target="ifr-video">Tutorial Bass</a>
                     <a href="https://www.youtube.com/embed/ondTlJEmPYA" target="ifr-video">Tutorial Tobe</a><br />
                 </div>
-    
-                <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/o8wM8inaqmo"
+                <iframe name="ifr-video" width="350" height="200" src="https://www.youtube.com/embed/o8wM8inaqmo"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
+
             </section>
+
+            <section id="useri-online">
+                <h2>Utilizatori online</h2>
+                <p>Utilizatori online: <span id="nr-useri-online">0</span></p>
+                <p>Utilizatori unici: <span id="nr-useri-unici">0</span></p>
+                <p>Numarul de vizite: <span id="nr-vizite">0</span></p>
+                <p>Ultima vizita: <time datetime="2022-01-05">5 ianuarie 2022</time></p>
+            </section>
+
+            <section id="statistici">
+                <h2>Statistici</h2>
+                <p>Numarul de vizitatori: <span id="nr-vizitatori">0</span></p>
+                <p>Numarul de vizitatori unici: <span id="nr-vizitatori-unici">0</span></p>
+                <p>Numarul de vizite: <span id="nr-vizite">0</span></p>
+                <p>Ultima vizita: <time datetime="2022-01-05">5 ianuarie 2022</time></p>
+            </section>
+
             <section id="anunturi">
                 <h2>Anunțuri</h2>
                 <p><time datetime="2022-01-05">5 ianuarie 2022</time> <strong>Am redeschis locatiile fizice!</strong>
@@ -349,45 +247,37 @@
                 <p><time datetime="2020-12-28">28 decembrie 2020</time>Boxe pentru anul nou!</p>
                 <p><time datetime="2021-02-11">11 februarie 2021</time> Elibereaza stresul cu o chitara noua! </p>
             </section>
-            <section id="intrebari">
-                <h2>Întrebări frecvente</h2>
-                <details>
-                    <summary>Politica de retur?</summary>
-                    <p>14 zile.</p>
-                </details>
-                <details>
-                    <summary>Livrati si Tobe?
-                    </summary>
-                    <p>Tobele presupun un extra cost de 50 RON din cauza volumului.</p>
-                </details>
-                <details>
-                    <summary>Aveti si servicii de intretinere instrumente?</summary>
-                    <p>Din pacate nu ne ocupam cu intretinerea.</p>
-                </details>
-                <details>
-                    <summary>Faceti angajari?</summary>
-                    <p>Arunca-ne un mail si vorbim!</p>
-                </details>
+
+            <section id="calendar">
+                <h2>Calendar</h2>
+                <p>Evenimente viitoare:</p>
+                <ul>
+                    <li><time datetime="2022-01-05">5 ianuarie 2022</time> - <a href="http://www.google.com"
+                            target="_blank">Concert</a></li>
+                    <li><time datetime="2022-01-15">15 ianuarie 2022</time> - <a href="http://www.google.com"
+                            target="_blank">Workshop</a></li>
+                    <li><time datetime="2022-01-25">25 ianuarie 2022</time> - <a href="http://www.google.com"
+                            target="_blank">Concurs</a></li>
+                    <li><time datetime="2022-02-05">5 februarie 2022</time> - <a href="http://www.google.com"
+                            target="_blank">Concert</a></li>
+                    <li><time datetime="2022-02-15">15 februarie 2022</time> - <a href="http://www.google.com"
+                            target="_blank">Workshop</a></li>
+                    <li><time datetime="2022-02-25">25 februarie 2022</time> - <a href="http://www.google.com"
+                            target="_blank">Concurs</a></li>
+                </ul>
             </section>
 
+            <section id="date-site">
+                <h2>Date site și server</h2>
+                <p>Ultima actualizare: <time datetime="2022-01-05">5 ianuarie 2022</time></p>
+                <p>Server: <a href="http://www.google.com" target="_blank">Apache</a></p>
+                <p>PHP: <a href="http://www.google.com" target="_blank">7.4.3</a></p>
+                <p>MySQL: <a href="http://www.google.com" target="_blank">5.7.29</a></p>
+                <p>HTML: <a href="http://www.google.com" target="_blank">5</a></p>
+                <p>CSS: <a href="http://www.google.com" target="_blank">3</a></p>
+                <p>JavaScript: <a href="http://www.google.com" target="_blank">ES6</a></p>
+            </section>
         </div>
-        <!-- <section id="galerie-statica">
-            <h2>Galerie</h2>
-            <div id="grid-galerie">
-                <figure>
-                    <img src="resurse/imagini/guitar-2119_1280.jpg" alt="guitar">
-                    <figcaption>Guitar</figcaption>
-                </figure>
-                <figure>
-                    <img src="resurse/imagini/guitar-2925274_1280.jpg" alt="guitar">
-                    <figcaption>Guitar</figcaption>
-                </figure>
-                <figure>
-                    <img src="resurse/imagini/bass-guitar-913092_1280.jpg" alt="bass">
-                    <figcaption>Bass</figcaption
-                </figure>
-            </div>
-        </section> -->
 
     </main>
     <footer>
