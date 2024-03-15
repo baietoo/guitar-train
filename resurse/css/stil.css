@@ -16,10 +16,14 @@ body {
     font-size: 1em;
     font-family: "Nunito Sans", sans-serif;
 }
-#chitara{
+
+#chitara {
     color: var(--albastru-inchis);
 }
-.meniu, li, a {
+
+.meniu,
+li,
+a {
     /* remove decoration */
     list-style-type: none;
     text-decoration: none;
@@ -41,11 +45,11 @@ jumătate de secundă.
 
 
 */
-table > tbody > tr:nth-child(even) {
+table>tbody>tr:nth-child(even) {
     background-color: var(--albastru);
 }
 
-table > tbody > tr:nth-child(odd) {
+table>tbody>tr:nth-child(odd) {
     background-color: var(--crem);
 }
 
@@ -54,49 +58,50 @@ orizontal (atenție doar containerul cu tabelul va avea scrollbar, nu toată pag
 Hint: tabelul va fi pus într-un div cu un anume tip de overflow orizontal)*/
 /* display horizontal scroll bar in .div-orar */
 
-.div-orar {
-    overflow-x: auto;
-}
+
 
 table {
     border: 5px inset var(--albastru-inchis);
+    border-collapse: collapse;
+    /* no wrap */
+    white-space: nowrap;
 }
 
-table > tbody > tr:hover {
+table>tbody>tr:hover {
     outline: 5px solid transparent;
     transition: outline 0.5s;
 }
 
-table > tbody > tr > td {
+table>tbody>tr>td {
     border: 1px solid var(--albastru-inchis);
     padding: 10px;
 }
 
-table > caption {
+table>caption {
     caption-side: bottom;
 }
 
-
-header{
+header {
     background-color: var(--rosu);
     color: var(--crem);
     padding: 10px;
     border-radius: 10px;
 }
 
-footer{
-    margin-top:10px;
+footer {
+    margin-top: 10px;
 }
 
-h2{
+h2 {
     color: var(--albastru-inchis);
 }
-.intro-oferte > p{
+
+.intro-oferte>p {
     color: var(--albastru-inchis);
     font-weight: 600;
-    font-size:1.1em;
+    font-size: 1.1em;
     display: inline;
-    padding:30px;
+    padding: 30px;
 }
 
 
@@ -115,8 +120,61 @@ li {
 
 
 /* iframe responsive */
- iframe {
-    max-width: 100%;
+
+.container-iframe {
+    /* Aplicati display:flex pe containerul care trebuie sa contina coloane (fie container-iframe, fie taburi-iframe in functie de cerinta)
+ */
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    height: 50%;
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--albastru);
+    color: var(--crem);
+    overflow: hidden;
+}
+
+.my-iframe {
+    /* makey iframe stretch to parent container */
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    border: 2px solid var(--albastru-inchis);
+
+}
+
+/* Stilizati tagurile <a> sub forma de butoane (width si height setat, background, border)
+ */
+.taburi-iframe {
+    /* center the elements at middle of container*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* push elements down */
+
+
+}
+
+.taburi-iframe>a {
+    padding: 10px;
+    background-color: var(--maro);
+    color: var(--crem);
+    border-radius: 10px 10px 0 0;
+    text-decoration: none;
+    margin: 10px 10px 0 0;
+}
+
+.taburi-iframe>a:hover {
+    padding: 10px;
+    background-color: var(--albastru-inchis);
+    color: var(--albastru);
+    text-decoration: none;
+    /* add delay */
+    transition: background-color 1s;
 }
 
 .meniu {
@@ -125,8 +183,48 @@ li {
     align-items: center;
     padding: 10px;
     border-radius: 10px;
-
 }
+
+#link-top {
+    position: fixed;
+    bottom: 0.3em;
+    opacity: 0.5;
+    left: 0.3em;
+    width: 3.5rem;
+    box-sizing: border-box;
+    height: 3.1rem;
+    line-height: 3rem;
+    text-align: center;
+    border: 5px solid grey;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    background: transparent;
+}
+
+#link-top:hover {
+    opacity: 1;
+}
+
+#triunghi {
+    height: 0px;
+    opacity: 0.5;
+    width: 0;
+    display: inline-block;
+    border-bottom: 0.9rem solid black;
+    border-left: 0.9rem solid transparent;
+    border-right: 0.9rem solid transparent;
+    vertical-align: top;
+    transform: translateY(80%);
+}
+
+#triunghi:hover {
+    opacity: 1;
+    border-bottom: 0.9rem solid var(--portocaliu);
+    transform: translateY(30%);
+    transition: transform 0.7s;
+}
+
 #welcome {
     background-color: var(--crem);
     border-radius: 10px;
@@ -171,12 +269,12 @@ li {
 #orar {
     grid-area: orar;
     border: var(--albastru-inchis) 2px solid;
-    border-radius:10px;
+    border-radius: 10px;
 }
 
 #tutoriale {
     grid-area: tutoriale;
-    
+
 }
 
 #useri-online {
@@ -204,7 +302,9 @@ li {
     background-color: var(--maro);
     border-radius: 10px;
 }
-#calendar > *, #calendar > * > *{
+
+#calendar>*,
+#calendar>*>* {
     color: var(--crem);
 }
 
@@ -214,7 +314,8 @@ li {
     border-radius: 10px;
 }
 
-#date-site > p, #date-site > p > *{
+#date-site>p,
+#date-site>p>* {
     color: var(--crem);
 }
 
@@ -222,7 +323,7 @@ li {
 @media screen and (max-width: 1200px) {
     body {
         --dim-spatiere: 100px;
-        font-size:0.9em;
+        font-size: 0.9em;
     }
 
     #grid-pagina {
@@ -247,9 +348,14 @@ li {
 /* ECRAN MIC */
 @media screen and (max-width: 800px) {
     body {
-        --dim-spatiere: 50px;
-        font-size:0.8em;
+        --dim-spatiere: 0px;
+        font-size: 0.8em;
     }
+
+    .div-orar {
+        overflow-x: auto;
+    }
+
 
     #grid-pagina {
         display: grid;
