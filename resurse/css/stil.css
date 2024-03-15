@@ -221,9 +221,10 @@ li {
 }
 
 #triunghi:hover {
+    display: inline-block;
     opacity: 1;
     border-bottom: 0.9rem solid var(--portocaliu);
-    transform: translateY(30%);
+    transform: translateY(-30%);
     transition: transform 0.7s;
 }
 
@@ -361,6 +362,7 @@ li {
 
     .div-orar {
         overflow-x: auto;
+        /* overflow-y: hidden; */
     }
 
 
