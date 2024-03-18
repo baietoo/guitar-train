@@ -1,0 +1,77 @@
+body {
+    --padding: 20px;
+    --dim-spatiere: 150px;
+    --maro: #5C4B51;
+    --albastru: #8CBEB2;
+    --albastru-inchis: #134453;
+    --crem: #f1edd6;
+    --portocaliu: #F3B562;
+    --rosu: #F06060;
+    padding-left: var(--dim-spatiere);
+    padding-right: var(--dim-spatiere);
+    font-size: 1em;
+    font-family: "Nunito Sans", sans-serif;
+
+}
+
+
+#tab-orar {
+    border: 5px inset var(--albastru-inchis);
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding:40px;
+    position: relative;
+    overflow-x: hidden;
+    /* no wrap */
+    /* white-space: nowrap; */
+}
+
+#tab-orar th, #tab-orar td {
+    border: 1px solid var(--albastru-inchis);
+    padding: 10px;
+    
+}
+/* nth-of-type ca sa selectezi doar copii */
+#tab-orar thead th:nth-child(even) {
+    background-color: var(--albastru);
+}
+
+#tab-orar thead th:nth-child(odd) {
+    background-color: var(--crem);
+}
+
+#tab-orar tbody tr:nth-child(even) {
+    background-color: var(--albastru);
+}
+
+#tab-orar tbody tr:nth-child(odd) {
+    background-color: var(--crem);
+}
+
+#tab orar caption {
+    caption-side: bottom;
+}
+
+#tab-orar tr:hover {
+    outline: 5px solid transparent;
+    transition: outline 0.5s;
+}
+
+#tab-orar td[rowspan]:hover {
+    outline: 5px solid var(--maro);
+    transition: outline 0.5s;
+}
+
+/* table th {
+    background-color: var(--rosu);
+    color: var(--crem);
+    padding: 10px;
+}
+
+
+table>tbody>tr>td {
+    border: 1px solid var(--albastru-inchis);
+    padding: 10px;
+} */
+
+

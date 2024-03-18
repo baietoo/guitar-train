@@ -1,33 +1,9 @@
-/* Color Theme Swatches in Hex */
-html {
-    --maro: #5C4B51;
-    --albastru: #8CBEB2;
-    --albastru-inchis: #134453;
-    --crem: #f1edd6;
-    --portocaliu: #F3B562;
-    --rosu: #F06060;
-}
-
-body {
-    --padding: 20px;
-    --dim-spatiere: 150px;
-    padding-left: var(--dim-spatiere);
-    padding-right: var(--dim-spatiere);
-    font-size: 1em;
-    font-family: "Nunito Sans", sans-serif;
-}
 
 #chitara {
     color: var(--albastru-inchis);
 }
 
-.meniu,
-li,
-a {
-    /* remove decoration */
-    list-style-type: none;
-    text-decoration: none;
-}
+
 
 /* 
 Borderele dintre doua rânduri vor avea culori alternate 
@@ -45,13 +21,6 @@ jumătate de secundă.
 
 
 */
-table>tbody>tr:nth-child(even) {
-    background-color: var(--albastru);
-}
-
-table>tbody>tr:nth-child(odd) {
-    background-color: var(--crem);
-}
 
 /*Pe ecran mic (eventual și mediu), tabelul va fi într-un container cu un scrollbar 
 orizontal (atenție doar containerul cu tabelul va avea scrollbar, nu toată pagina). 
@@ -59,27 +28,6 @@ Hint: tabelul va fi pus într-un div cu un anume tip de overflow orizontal)*/
 /* display horizontal scroll bar in .div-orar */
 
 
-
-table {
-    border: 5px inset var(--albastru-inchis);
-    border-collapse: collapse;
-    /* no wrap */
-    white-space: nowrap;
-}
-
-table>tbody>tr:hover {
-    outline: 5px solid transparent;
-    transition: outline 0.5s;
-}
-
-table>tbody>tr>td {
-    border: 1px solid var(--albastru-inchis);
-    padding: 10px;
-}
-
-table>caption {
-    caption-side: bottom;
-}
 
 header {
     background-color: var(--rosu);
@@ -160,12 +108,19 @@ li {
 }
 
 .taburi-iframe>a {
+    display: block;
     padding: 10px;
     background-color: var(--maro);
     color: var(--crem);
     border-radius: 10px 10px 0 0;
     text-decoration: none;
-    margin: 10px 10px 0 0;
+    /* margin: 10px 10px 0 0; */
+    margin: 0px 2px 0 2px;
+    box-shadow: 0 0 10px 0 var(--albastru-inchis);
+}
+
+.taburi-iframe>a:last-child {
+    margin-right: 0px;
 }
 
 .taburi-iframe>a:hover {
@@ -177,56 +132,6 @@ li {
     transition: background-color 1s;
 }
 
-.meniu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-
-
-#link-top {
-    position: fixed;
-    bottom: 0.3em;
-    opacity: 0.5;
-    left: 0.3em;
-    width: 3.5rem;
-    box-sizing: border-box;
-    height: 3.1rem;
-    line-height: 3rem;
-    text-align: center;
-    border: 5px solid grey;
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    background: transparent;
-}
-
-#link-top:hover {
-    opacity: 1;
-}
-
-#triunghi {
-    height: 0px;
-    opacity: 0.5;
-    width: 0;
-    display: inline-block;
-    border-bottom: 0.9rem solid black;
-    border-left: 0.9rem solid transparent;
-    border-right: 0.9rem solid transparent;
-    vertical-align: top;
-    transform: translateY(80%);
-}
-
-#triunghi:hover {
-    display: inline-block;
-    opacity: 1;
-    border-bottom: 0.9rem solid var(--portocaliu);
-    transform: translateY(-30%);
-    transition: transform 0.7s;
-}
 
 #welcome {
     background-color: var(--crem);
@@ -236,155 +141,5 @@ li {
 #tutoriale {
     border-radius: 10px;
     border: 2px solid var(--albastru-inchis);
-    padding: var(--pading);
-}
-
-#grid-pagina {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-areas:
-        /* ZONA 1: Prezentare */
-        "welcome welcome welcome welcome welcome"
-        "welcome welcome welcome welcome welcome"
-
-        /* ZONA 2,8: tabel, orice*/
-        "orar orar orar  tutoriale tutoriale"
-
-        /* ZONA 5,6,8: lista useri online, date depre useri si statistici, orice */
-        "useri-online statistici statistici tutoriale tutoriale"
-        "useri-online statistici statistici tutoriale tutoriale"
-
-        /* ZONA 4,3,7 anunturi, calendar evenimente, date despre site si server*/
-        "anunturi anunturi calendar calendar date-site";
-
-}
-
-#grid-pagina>* {
-    outline: 2px solid var(--culoare1);
-    padding: var(--padding);
-}
-
-
-#welcome {
-    grid-area: welcome;
-}
-
-#orar {
-    grid-area: orar;
-    border: var(--albastru-inchis) 2px solid;
-    border-radius: 10px;
-}
-
-#tutoriale {
-    grid-area: tutoriale;
-
-}
-
-#useri-online {
-    grid-area: useri-online;
-    background-color: var(--albastru);
-    color: var(--crem);
-    border-radius: 10px;
-}
-
-#statistici {
-    grid-area: statistici;
-    background-color: var(--albastru);
-    color: var(--crem);
-    border-radius: 10px;
-}
-
-#anunturi {
-    grid-area: anunturi;
-    background-color: var(--crem);
-    border-radius: 10px;
-}
-
-#calendar {
-    grid-area: calendar;
-    background-color: var(--maro);
-    border-radius: 10px;
-}
-
-#calendar>*,
-#calendar>*>* {
-    color: var(--crem);
-}
-
-#date-site {
-    grid-area: date-site;
-    background-color: var(--rosu);
-    border-radius: 10px;
-}
-
-#date-site>p,
-#date-site>p>* {
-    color: var(--crem);
-}
-
-.e-formula{
-    color: var(--albastru-inchis);
-    font-size: 1.5em;
-}
-
-/* ECRAN MEDIU */
-@media screen and (max-width: 1200px) {
-    body {
-        --dim-spatiere: 100px;
-        font-size: 0.9em;
-    }
-
-    #grid-pagina {
-        display: grid;
-        grid-gap: 5px;
-        grid-template-areas:
-            /* ZONA 1: Prezentare */
-            "welcome welcome"
-
-            /* ZONA 2,8: tabel, orice*/
-            "orar tutoriale"
-
-            /* ZONA 5,6,8: lista useri online, date depre useri si statistici, orice */
-            "useri-online statistici"
-
-            /* ZONA 4,3,7 anunturi, calendar evenimente, date despre site si server*/
-            "anunturi calendar"
-            "date-site date-site";
-    }
-}
-
-/* ECRAN MIC */
-@media screen and (max-width: 800px) {
-    body {
-        --dim-spatiere: 0px;
-        font-size: 0.8em;
-    }
-
-    .div-orar {
-        overflow-x: auto;
-        /* overflow-y: hidden; */
-    }
-
-
-    #grid-pagina {
-        display: grid;
-        grid-gap: 2px;
-        grid-template-areas:
-            /* ZONA 1: Prezentare */
-            "welcome"
-            "welcome"
-
-            /* ZONA 2,8: tabel, orice*/
-            "orar"
-            "tutoriale"
-
-            /* ZONA 5,6,8: lista useri online, date depre useri si statistici, orice */
-            "useri-online"
-            "statistici "
-
-            /* ZONA 4,3,7 anunturi, calendar evenimente, date despre site si server*/
-            "anunturi"
-            "calendar"
-            "date-site";
-    }
+    /* padding: var(--pading); */
 }
