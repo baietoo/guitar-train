@@ -32,6 +32,7 @@
     grid-area: orar;
     border: var(--albastru-inchis) 2px solid;
     border-radius: 10px;
+    overflow-x: auto;
 }
 
 #tutoriale {
