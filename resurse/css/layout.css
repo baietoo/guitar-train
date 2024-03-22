@@ -26,6 +26,8 @@
 
 #welcome {
     grid-area: welcome;
+    background-color: var(--crem);
+
 }
 
 #orar {
@@ -37,6 +39,8 @@
 
 #tutoriale {
     grid-area: tutoriale;
+    border: 2px solid var(--albastru-inchis);
+
 
 }
 

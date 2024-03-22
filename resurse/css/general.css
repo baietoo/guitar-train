@@ -14,64 +14,45 @@ body {
 
 }
 
-
-#tab-orar {
-    border: 5px inset var(--albastru-inchis);
-    border-collapse: collapse;
-    border-spacing: 0;
-    padding:40px;
-    position: relative;
-    overflow-x: hidden;
-    /* no wrap */
-    /* white-space: nowrap; */
-}
-
-#tab-orar th, #tab-orar td {
-    border: 1px solid var(--albastru-inchis);
-    padding: 10px;
-    
-}
-/* nth-of-type ca sa selectezi doar copii */
-#tab-orar thead th:nth-child(even) {
-    background-color: var(--albastru);
-}
-
-#tab-orar thead th:nth-child(odd) {
-    background-color: var(--crem);
-}
-
-#tab-orar tbody tr:nth-child(even) {
-    background-color: var(--albastru);
-}
-
-#tab-orar tbody tr:nth-child(odd) {
-    background-color: var(--crem);
-}
-
-#tab orar caption {
-    caption-side: bottom;
-}
-
-#tab-orar tr:hover {
-    outline: 5px solid transparent;
-    transition: outline 0.5s;
-}
-
-#tab-orar td[rowspan]:hover {
-    outline: 5px solid var(--maro);
-    transition: outline 0.5s;
-}
-
-/* table th {
+header {
     background-color: var(--rosu);
     color: var(--crem);
     padding: 10px;
+    border-radius: 10px;
+}
+
+footer {
+    margin-top: 10px;
+}
+
+h2 {
+    color: var(--albastru-inchis);
+}
+
+.intro-oferte>p {
+    color: var(--albastru-inchis);
+    font-weight: 600;
+    font-size: 1.1em;
+    display: inline;
+    padding: 30px;
 }
 
 
-table>tbody>tr>td {
-    border: 1px solid var(--albastru-inchis);
-    padding: 10px;
-} */
+#chitara {
+    color: var(--albastru-inchis);
+}
 
+
+p {
+    color: var(--maro);
+}
+
+a {
+    color: var(--rosu);
+    font-style: italic;
+}
+
+li {
+    color: var(--maro);
+}
 
