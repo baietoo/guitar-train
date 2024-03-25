@@ -16,15 +16,7 @@
 
 }
 
-.my-iframe {
-    /* makey iframe stretch to parent container */
-    flex-grow: 1;
-    margin: 0;
-    padding: 0;
-    border: 2px solid var(--albastru-inchis);
 
-
-}
 
 /* Stilizati tagurile <a> sub forma de butoane (width si height setat, background, border)
  */
@@ -62,4 +54,23 @@
     text-decoration: none;
     /* add delay */
     transition: background-color 1s;
+}
+
+.ifr-video{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    /* padding-top: 56.25%; 16:9 Aspect Ratio */
+
+}
+
+.my-iframe {
+    /* makey iframe stretch to parent container */
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--albastru-inchis);
 }
