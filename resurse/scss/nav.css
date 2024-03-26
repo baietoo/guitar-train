@@ -1,6 +1,4 @@
 nav {
-  --inaltime-meniu: 2rem;
-  -latime-buton: 100px;
   background-color: var(--maro);
 }
 
@@ -33,7 +31,7 @@ nav {
   display: block;
   height: 100%;
   color: var(--albastru-inchis);
-  line-height: var(--inaltime-meniu);
+  line-height: 2rem;
   cursor: pointer;
   color: var(--crem);
 }
@@ -41,8 +39,8 @@ nav {
   font-weight: bold;
   border: 1px solid var(--crem);
   padding: 4px;
-  height: var(--inaltime-meniu);
-  width: var(--latime-buton);
+  height: 2rem;
+  width: var(100px);
 }
 .meniu li:hover {
   background-color: var(--albastru);
@@ -62,6 +60,53 @@ nav {
   list-style-type: none;
   position: absolute;
   z-index: 10;
+}
+
+@media (max-width: 576px) {
+  .meniu {
+    display: none;
+  }
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: var(--crem);
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+.line:nth-child(1) {
+  top: 0;
+}
+.line:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.line:nth-child(3) {
+  bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .hamburger-menu {
+    display: block;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+  }
+}
+.hamburger-menu:hover {
+  transition: all 0.5s;
+}
+.hamburger-menu.active .line:nth-child(1) {
+  transform: translateY(450%) rotate(45deg);
+}
+.hamburger-menu.active .line:nth-child(2) {
+  display: none;
+}
+.hamburger-menu.active .line:nth-child(3) {
+  transform: translateY(-450%) rotate(-45deg);
 }
 
 /*# sourceMappingURL=nav.css.map */
