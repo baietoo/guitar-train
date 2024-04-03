@@ -1,0 +1,112 @@
+#watermark,
+#banner {
+    display: none;
+}
+
+
+@media print {
+
+    #watermark,
+    #banner {
+        display: block;
+    }
+
+    // #banner să fie afișat în josul primei pagini, centrat pe orizontală, întins pe 70% din lățimea paginii, într-un border negru inset de 4px
+
+    #banner {
+        position: absolute;
+        display: inline-block;
+        top: 90%;
+        width: 70%;
+        height: 20px;
+        left: 15%;
+        overflow: visible;
+        border: 4px inset black;
+
+        &::after {
+            content: "Acesta este un proiect scolar!";
+            position: absolute;
+            // font-size: 10px;
+            // right: 0;
+            // // border: 5px double black;
+            // width: 200px;
+            // height: 35px;
+            // center content
+            left: 30%;
+
+
+        }
+    }
+
+    h1 {
+        margin-top: 50%;
+        text-align: center;
+        margin-left: 1cm;
+    }
+
+    #watermark {
+        display: block;
+        position: fixed;
+        /*apare pe toate paginile*/
+        bottom: 0;
+        color: rgba(0, 0, 0, 0.4);
+        right: 0;
+
+        &::after {
+
+            opacity: 0.4;
+            padding: 5px;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            background: white;
+            border: 3px solid black;
+            border-radius: 10px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-right: none;
+            content: "Catalin Circu";
+        }
+    }
+
+    #link-top, #tutoriale {
+        display: none;
+    }
+
+    #grid-pagina {
+        display: block;
+    }
+    a {
+        color: var(--maro);
+        text-decoration: none;;
+    }
+    nav {
+        page-break-after: always;
+
+        .meniu {
+            display: block;
+            list-style: square;
+        }
+    }
+    footer {
+        page-break-before: always;
+    }
+
+    @page {
+		size: A4 portrait;
+		margin-bottom:2cm;
+		margin-top:2cm;
+		counter-increment: page;
+			
+	}
+	@page:left{
+
+		margin-left:3cm;
+		margin-right:1cm;
+	}
+	@page:right{
+
+		margin-right:3cm;
+		margin-left:1cm;
+	}
+}

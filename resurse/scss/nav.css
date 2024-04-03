@@ -11,9 +11,8 @@ nav {
 }
 
 .meniu li:hover > a, .meniu li:hover > div {
-  background-color: var(--albastru);
   color: var(--albastru-inchis);
-  transition: all 0.5s;
+  transition: all 1s linear;
 }
 
 .meniu, .meniu * {
@@ -43,23 +42,26 @@ nav {
   width: var(100px);
 }
 .meniu li:hover {
-  background-color: var(--albastru);
-  transition: all 0.5s;
+  box-shadow: inset 0 0 10px var(--albastru);
+  transition: all 0.7s;
 }
 .meniu li:hover > a, .meniu li:hover > div {
-  color: var(--albastru-inchis);
+  color: var(--crem);
 }
 .meniu li:hover ul {
   display: block;
-  z-index: 3;
-  background-color: var(--albastru-inchis);
-  color: var(--albastru);
+  transform: scaleY(0);
+  opacity: 0;
+  animation: animatie_submeniu 0.7s linear forwards;
+  transform-origin: top;
 }
 .meniu ul {
   display: none;
   list-style-type: none;
   position: absolute;
   z-index: 10;
+  background-color: var(--albastru-inchis);
+  color: var(--albastru);
 }
 
 @media (max-width: 576px) {
@@ -74,6 +76,7 @@ nav {
   background-color: var(--crem);
   position: absolute;
   transition: transform 0.3s ease;
+  display: none;
 }
 .line:nth-child(1) {
   top: 0;
@@ -95,9 +98,15 @@ nav {
     cursor: pointer;
     padding: 5px;
   }
+  .hamburger-menu .line {
+    display: block;
+  }
 }
 .hamburger-menu:hover {
-  transition: all 0.5s;
+  transition: all 0.7s;
+}
+.hamburger-menu.active {
+  transition: all 0.7s;
 }
 .hamburger-menu.active .line:nth-child(1) {
   transform: translateY(450%) rotate(45deg);
@@ -107,6 +116,30 @@ nav {
 }
 .hamburger-menu.active .line:nth-child(3) {
   transform: translateY(-450%) rotate(-45deg);
+}
+.hamburger-menu.active + ul.meniu {
+  display: block;
+  transform-origin: 0 0;
+  position: relative;
+  z-index: 2;
+  animation: aparitie_hamburger 1 0.7s linear forwards;
+}
+
+@keyframes animatie_submeniu {
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+@keyframes aparitie_hamburger {
+  0% {
+    opacity: 0;
+    transform: scaleY(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1, 1);
+  }
 }
 
 /*# sourceMappingURL=nav.css.map */
