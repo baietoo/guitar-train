@@ -44,6 +44,10 @@ app.get('/favicon.ico', (req, res) => {
     res.sendFile(path.join(__dirname, "resurse/imagini/favicon.ico"));
 });
 
+app.get(new RegExp("^\/resurse\/[a-zA-Z0-9_\/-]+$"), (req, res) => {
+    afisareEroare(res, 403);
+});
+
 app.get('/*.ejs', (req, res) => {
     afisareEroare(res, 400);
 });
