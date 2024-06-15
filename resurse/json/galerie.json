@@ -1,0 +1,138 @@
+{
+	"cale_galerie": "resurse/imagini/galerie",
+	"imagini": [
+		{
+			"fisier": "ac-guitar.jpg",
+			"descriere": "chitara acustica",
+			"luni": [
+				"martie",
+				"februarie",
+				"noiembrie",
+				"aprilie"
+			]
+		},
+		{
+			"fisier": "bass.jpg",
+			"descriere": "chitara bass",
+			"luni": [
+				"martie",
+				"februarie",
+				"noiembrie",
+				"aprilie"
+			]
+		},
+		{
+			"fisier": "elec-guitar.jpg",
+			"descriere": "chitara electrica",
+			"luni": [
+				"martie",
+				"februarie",
+				"noiembrie",
+				"aprilie"
+			]
+		},
+		{
+			"fisier": "monkey_640.jpg",
+			"descriere": "o maimuta",
+			"luni": [
+				"martie",
+				"februarie",
+				"noiembrie",
+				"aprilie"
+			]
+		},
+		{
+			"fisier": "ac-guitar.jpg",
+			"descriere": "chitara acustica",
+			"luni": [
+				"martie",
+				"februarie",
+				"noiembrie",
+				"aprilie"
+			]
+		},
+		{
+			"fisier": "bass.jpg",
+			"descriere": "chitara bass",
+			"luni": [
+				"martie",
+				"februarie",
+				"noiembrie",
+				"aprilie"
+			]
+		},
+		{
+			"fisier": "elec-guitar.jpg",
+			"descriere": "chitara electrica",
+			"luni": [
+				"martie",
+				"februarie",
+				"noiembrie",
+				"aprilie"
+			]
+		},
+		{
+			"fisier": "monkey_640.jpg",
+			"descriere": "o maimuta",
+			"luni": [
+				"martie",
+				"februarie",
+				"noiembrie",
+				"aprilie"
+			]
+		},
+		{
+			"fisier": "ac-guitar.jpg",
+			"descriere": "chitara acustica",
+			"luni": [
+				"martie",
+				"februarie",
+				"noiembrie",
+				"aprilie"
+			]
+		},
+		{
+			"fisier": "bass.jpg",
+			"descriere": "chitara bass",
+			"luni": [
+				"martie",
+				"februarie",
+				"noiembrie",
+				"aprilie"
+			]
+		},
+		{
+			"fisier": "elec-guitar.jpg",
+			"descriere": "chitara electrica",
+			"luni": [
+				"martie",
+				"februarie",
+				"noiembrie",
+				"aprilie"
+			]
+		},
+		{
+			"fisier": "monkey_640.jpg",
+			"descriere": "o maimuta",
+			"luni": [
+				"martie",
+				"februarie",
+				"noiembrie",
+				"aprilie"
+			]
+		},
+		{
+			"fisier": "elec-guitar.jpg",
+			"descriere": "chitara electrica",
+			"luni": [
+				"martie",
+				"februarie",
+				"noiembrie",
+				"aprilie"
+			]
+		}
+
+
+
+	]
+}

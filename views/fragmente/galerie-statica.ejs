@@ -1,0 +1,25 @@
+<section id="galerie-statica">
+    <h2>Galerie</h2>
+    <div id="grid-galerie">
+        <% 
+            var vLuni = ['Ianuarie', 'Februarie', 'Martie', 'Aprilie', 'Mai', 'Iunie', 'Iulie', 'August', 'Septembrie', 'Octombrie', 'Noiembrie', 'Decembrie'];    
+            var d = new Date();
+            var lunaCurenta = vLuni[d.getMonth()];
+            for (let imag of locals.imagini) {
+                // if(imag?.luni?.includes(lunaCurenta)){
+                    %>
+                    <figure>
+                        <picture>
+                            <source srcset="<%=imag.fisier_mediu %>" media="max-width: 1200px" />  
+                            <img src="<%=imag.fisier %>" alt="chitare" />  
+                        </picture>    
+                    </figure>
+                    <%
+                // }
+            }
+        %>
+      
+
+    
+    </div>
+</section>

@@ -14,8 +14,9 @@
         "useri-online statistici statistici tutoriale tutoriale"
 
         /* ZONA 4,3,7 anunturi, calendar evenimente, date despre site si server*/
-        "anunturi anunturi calendar calendar date-site";
+        "anunturi anunturi calendar calendar date-site"
 
+        "g-stat g-stat g-stat g-stat g-stat";
 }
 
 #grid-pagina>* {
@@ -28,6 +29,12 @@
     grid-area: welcome;
     background-color: var(--crem);
 
+}
+
+#galerie-statica {
+    grid-area: g-stat;
+    background-color: var(--albastru);
+    border-radius: 10px;
 }
 
 #orar {
