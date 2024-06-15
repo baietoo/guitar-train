@@ -1,6 +1,8 @@
+<!DOCTYPE html>
+<html  lang="ro">
 <!-- include header -->
-<%- include('fragmente/head') %>
-<%- include('fragmente/header') %>
+<%- include('../fragmente/head') %>
+<%- include('../fragmente/header') %>
 
 <body>
 
@@ -31,7 +33,7 @@
             <li>
                 <div>Despre</div>
                 <ul>
-                    <li><a href="despre.html#prezentare">Prezentare</a></li>
+                    <li><a href="despre">Prezentare</a></li>
                     <li><a href="despre.html#istoric">Istoric</a></li>
                     <li><a href="despre.html#motivatie">Motivatie</a></li>
                     <li><a href="despre.html#galerie">Galerie</a></li>
@@ -57,6 +59,7 @@
                     <i class="fa-solid fa-heart fa-beat"></i>
                     BINE ATI VENIT!
                     <i class="fa-solid fa-heart fa-beat"></i>
+                    <p><%- locals.ip %></p>
                 </h2>
                 <p class="intro">Vă mulțumim că ne vizitați site-ul. Downloadati de <a
                         href="resurse/fisiere/cartea-chitara-acustica.pdf" download>AICI</a> cartea gratis pentru
@@ -285,5 +288,7 @@
     </footer>
     <p id="banner"></p>
 </body>
+<script src="/js/hamburger.js" defer></script>
+
 
 </html>

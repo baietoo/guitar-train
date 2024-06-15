@@ -109,13 +109,13 @@ nav {
   transition: all 0.7s;
 }
 .hamburger-menu.active .line:nth-child(1) {
-  transform: translateY(450%) rotate(45deg);
+  transform:  rotate(45deg);
 }
 .hamburger-menu.active .line:nth-child(2) {
   display: none;
 }
 .hamburger-menu.active .line:nth-child(3) {
-  transform: translateY(-450%) rotate(-45deg);
+  transform:  rotate(-45deg);
 }
 .hamburger-menu.active + ul.meniu {
   display: block;
