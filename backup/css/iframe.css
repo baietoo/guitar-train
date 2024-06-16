@@ -1,0 +1,76 @@
+/* iframe responsive */
+
+.container-iframe {
+    /* Aplicati display:flex pe containerul care trebuie sa contina coloane (fie container-iframe, fie taburi-iframe in functie de cerinta)
+ */
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--albastru);
+    color: var(--crem);
+    overflow: hidden;
+
+}
+
+
+
+/* Stilizati tagurile <a> sub forma de butoane (width si height setat, background, border)
+ */
+.taburi-iframe {
+    /* center the elements at middle of container*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* push elements down */
+
+
+}
+
+.taburi-iframe>a {
+    display: block;
+    padding: 10px;
+    background-color: var(--maro);
+    color: var(--crem);
+    border-radius: 10px 10px 0 0;
+    text-decoration: none;
+    /* margin: 10px 10px 0 0; */
+    margin: 0px 2px 0 2px;
+    box-shadow: 0 0 10px 0 var(--albastru-inchis);
+}
+
+.taburi-iframe>a:last-child {
+    margin-right: 0px;
+}
+
+.taburi-iframe>a:hover {
+    padding: 10px;
+    background-color: var(--albastru-inchis);
+    color: var(--albastru);
+    text-decoration: none;
+    /* add delay */
+    transition: background-color 1s;
+}
+
+.ifr-video{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    /* padding-top: 56.25%; 16:9 Aspect Ratio */
+
+}
+
+.my-iframe {
+    /* makey iframe stretch to parent container */
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--albastru-inchis);
+}

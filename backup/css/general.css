@@ -1,0 +1,58 @@
+body {
+    --padding: 20px;
+    --dim-spatiere: 150px;
+    --maro: #5C4B51;
+    --albastru: #8CBEB2;
+    --albastru-inchis: #134453;
+    --crem: #f1edd6;
+    --portocaliu: #F3B562;
+    --rosu: #F06060;
+    padding-left: var(--dim-spatiere);
+    padding-right: var(--dim-spatiere);
+    font-size: 1em;
+    font-family: "Nunito Sans", sans-serif;
+
+}
+
+header {
+    background-color: var(--rosu);
+    color: var(--crem);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+footer {
+    margin-top: 10px;
+}
+
+h2 {
+    color: var(--albastru-inchis);
+}
+
+.intro-oferte>p {
+    color: var(--albastru-inchis);
+    font-weight: 600;
+    font-size: 1.1em;
+    display: inline;
+    padding: 30px;
+}
+
+
+#chitara {
+    color: var(--albastru-inchis);
+}
+
+
+p {
+    color: var(--maro);
+}
+
+a {
+    color: var(--rosu);
+    font-style: italic;
+}
+
+li {
+    color: var(--maro);
+}
+
