@@ -1,5 +1,6 @@
 // se va crea obiect server express care va asculta 8080
 const fs = require('fs');
+const { Client } = require('pg');
 const sass = require('sass');
 const sharp = require('sharp');
 const path = require('path');
@@ -13,6 +14,7 @@ obGlobal = {
     folderScss: path.join(__dirname, "resurse/scss"),
     folderCss: path.join(__dirname, "resurse/css"),
     folderBackup: path.join(__dirname, "backup"),
+    optiuniMeniu: null
 }
 
 vect_foldere = ["temp", "backup"]
@@ -111,7 +113,7 @@ function initImagini() {
         imag.fisier = path.join("/", obGlobal.obImagini.cale_galerie, imag.fisier)
 
     }
-    console.log(obGlobal.obImagini)
+    // console.log(obGlobal.obImagini)
 }
 initImagini();
 
@@ -185,6 +187,56 @@ fs.watch(obGlobal.folderScss, function (eveniment, numeFis) {
         }
     }
 });
+
+
+var client = new Client({
+    database: "tw",
+    user: "postgres",
+    password: "postgres",
+    host: "localhost", port: 5433
+});
+
+client.connect();
+
+// client.query("select * from unnest(enum_range(null::categ_prajitura))", function (err, rez) {
+//     if (err) {
+//         console.log(err);
+//     }
+//     else {
+//         obGlobal.optiuniMeniu = rez.rows;
+//         console.log(rez.rows);
+//     }
+// });
+
+
+app.get("/produse", function (req, res) {
+    console.log("IN PRODUSE");
+    client.query("select * from unnest(enum_range(null::categ_prajitura))", function (err, rezCategorie) {
+        
+        if (err) {
+            console.log(err);
+        }
+        else {
+            let conditieWhere = "";
+            if (req.query.tip)
+                conditieWhere = ` where tip_produs='${req.query.tip}'` //"where tip='"+req.query.tip+"'"
+
+            client.query("select * from prajituri " + conditieWhere, function (err, rez) {
+                console.log(300)
+                if (err) {
+                    console.log(err);
+                    afisareEroare(res, 2);
+                }
+                else {
+                    console.log(rezCategorie.rows);
+                    res.render("pagini/produse", {produse:rez.rows, optiuni:rezCategorie.rows });
+                }
+            });
+        }
+    }
+    );
+});
+
 
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
