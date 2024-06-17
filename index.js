@@ -198,44 +198,54 @@ var client = new Client({
 
 client.connect();
 
-// client.query("select * from unnest(enum_range(null::categ_prajitura))", function (err, rez) {
-//     if (err) {
-//         console.log(err);
-//     }
-//     else {
-//         obGlobal.optiuniMeniu = rez.rows;
-//         console.log(rez.rows);
-//     }
-// });
-
-
-app.get("/produse", function (req, res) {
-    console.log("IN PRODUSE");
-    client.query("select * from unnest(enum_range(null::categ_prajitura))", function (err, rezCategorie) {
-        
-        if (err) {
-            console.log(err);
-        }
-        else {
-            let conditieWhere = "";
-            if (req.query.tip)
-                conditieWhere = ` where tip_produs='${req.query.tip}'` //"where tip='"+req.query.tip+"'"
-
-            client.query("select * from prajituri " + conditieWhere, function (err, rez) {
-                console.log(300)
-                if (err) {
-                    console.log(err);
-                    afisareEroare(res, 2);
-                }
-                else {
-                    console.log(rezCategorie.rows);
-                    res.render("pagini/produse", {produse:rez.rows, optiuni:rezCategorie.rows });
-                }
-            });
-        }
+client.query("select * from unnest(enum_range(null::categ_prajitura))", function (err, rez) {
+    if (err) {
+        console.log(err);
     }
-    );
+    else {
+        obGlobal.optiuniMeniu = rez.rows;
+        // for (let optiune of rez.rows) {
+        //     console.log(optiune);
+        // }
+        console.log(rez.rows);
+    }
 });
+
+client.query("select * from prajituri where tip_produs = 'cofetarie'", function (err, rez) {
+    if (err) {
+        console.log(err);
+    }
+    else {
+        obGlobal.optiuniMeniu = rez.rows;
+        // for (let optiune of rez.rows) {
+        //     console.log(optiune);
+        // }
+        console.log(rez.rows);
+    }
+});
+
+
+// app.get("/produse", function(req, res){
+//     console.log(req.query)
+//     console.log("DSADSADASDAS");
+//     var conditieQuery="";
+//     if (req.query.tip){
+//         conditieQuery=` where tip_produs='${req.query.tip}'`
+//     }
+//     client.query("select * from unnest(enum_range(null::categ_prajitura))", function(err, rezOptiuni){
+
+//         client.query(`select * from prajituri ${conditieQuery}`, function(err, rez){
+//             if (err){
+//                 console.log(err);
+//                 afisareEroare(res, 2);
+//             }
+//             else{
+//                 res.render("pagini/produse", {produse: rez.rows, optiuni:rezOptiuni.rows})
+//             }
+//         })
+//     });
+// })
+
 
 
 app.listen(port, () => {
