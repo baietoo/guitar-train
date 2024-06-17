@@ -117,32 +117,6 @@ function initImagini() {
 }
 initImagini();
 
-// Veți declara un app.get() general pentru calea "/*", care tratează orice cerere de forma /pagina randând fișierul pagina.ejs (unde "pagina" e un nume generic și trebuie să funcționeze pentru orice string). Atenție, acest app.get() trebuie să fie ultimul în lista de app.get()-uri.  Dacă pagina cerută nu există, se va randa o pagină specială de eroare 404 (în modul descris mai jos). 
-app.get('/*', (req, res) => {
-    console.log(req.url);
-    try {
-        res.render('pagini' + req.url, (err, rezHtml) => {
-            console.log(err);
-            console.log(rezHtml);
-            if (err) {
-                if (err.message.startsWith("Failed to lookup view")) {
-                    afisareEroare(res, 404)
-                    console.log("Nu A gasit pagina:", req.url);
-                }
-            } else {
-                res.send(rezHtml);
-            }
-        })
-    }
-    catch (err1) {
-        if (err1.message.startsWith("Cannot find module")) {
-            afisareEroare(res, 404)
-            console.log("Nu A gasit resursa:", req.url);
-            return;
-        }
-        afisareEroare(res);
-    }
-});
 
 
 function compileazaScss(caleScss, caleCss) {
@@ -198,55 +172,81 @@ var client = new Client({
 
 client.connect();
 
-client.query("select * from unnest(enum_range(null::categ_prajitura))", function (err, rez) {
-    if (err) {
-        console.log(err);
-    }
-    else {
-        obGlobal.optiuniMeniu = rez.rows;
-        // for (let optiune of rez.rows) {
-        //     console.log(optiune);
-        // }
-        console.log(rez.rows);
-    }
-});
-
-client.query("select * from prajituri where tip_produs = 'cofetarie'", function (err, rez) {
-    if (err) {
-        console.log(err);
-    }
-    else {
-        obGlobal.optiuniMeniu = rez.rows;
-        // for (let optiune of rez.rows) {
-        //     console.log(optiune);
-        // }
-        console.log(rez.rows);
-    }
-});
-
-
-// app.get("/produse", function(req, res){
-//     console.log(req.query)
-//     console.log("DSADSADASDAS");
-//     var conditieQuery="";
-//     if (req.query.tip){
-//         conditieQuery=` where tip_produs='${req.query.tip}'`
+// client.query("select * from unnest(enum_range(null::categ_prajitura))", function (err, rez) {
+//     if (err) {
+//         console.log(err);
 //     }
-//     client.query("select * from unnest(enum_range(null::categ_prajitura))", function(err, rezOptiuni){
+//     else {
+//         obGlobal.optiuniMeniu = rez.rows;
+//         // for (let optiune of rez.rows) {
+//         //     console.log(optiune);
+//         // }
+//         console.log(rez.rows);
+//     }
+// });
 
-//         client.query(`select * from prajituri ${conditieQuery}`, function(err, rez){
-//             if (err){
-//                 console.log(err);
-//                 afisareEroare(res, 2);
-//             }
-//             else{
-//                 res.render("pagini/produse", {produse: rez.rows, optiuni:rezOptiuni.rows})
-//             }
-//         })
-//     });
-// })
+// client.query("select * from prajituri where tip_produs = 'cofetarie'", function (err, rez) {
+//     if (err) {
+//         console.log(err);
+//     }
+//     else {
+//         obGlobal.optiuniMeniu = rez.rows;
+//         // for (let optiune of rez.rows) {
+//         //     console.log(optiune);
+//         // }
+//         console.log(rez.rows);
+//     }
+// });
 
 
+app.get("/produse", function(req, res){
+    console.log(req.query)
+    console.log("DSADSADASDAS");
+    var conditieQuery="";
+    if (req.query.tip){
+        conditieQuery=` where tip_produs='${req.query.tip}'`
+    }
+    client.query("select * from unnest(enum_range(null::categ_instrument))", function(err, rezOptiuni){
+
+        client.query(`select * from instrumente ${conditieQuery}`, function(err, rez){
+            if (err){
+                console.log(err);
+                afisareEroare(res, 2);
+            }
+            else{
+                res.render("pagini/produse", {produse: rez.rows, optiuni:rezOptiuni.rows})
+            }
+        })
+    });
+})
+
+
+// Veți declara un app.get() general pentru calea "/*", care tratează orice cerere de forma /pagina randând fișierul pagina.ejs (unde "pagina" e un nume generic și trebuie să funcționeze pentru orice string). Atenție, acest app.get() trebuie să fie ultimul în lista de app.get()-uri.  Dacă pagina cerută nu există, se va randa o pagină specială de eroare 404 (în modul descris mai jos). 
+app.get('/*', (req, res) => {
+    console.log(req.url);
+    try {
+        res.render('pagini' + req.url, (err, rezHtml) => {
+            console.log(err);
+            console.log(rezHtml);
+            if (err) {
+                if (err.message.startsWith("Failed to lookup view")) {
+                    afisareEroare(res, 404)
+                    console.log("Nu A gasit pagina:", req.url);
+                }
+            } else {
+                res.send(rezHtml);
+            }
+        })
+    }
+    catch (err1) {
+        if (err1.message.startsWith("Cannot find module")) {
+            afisareEroare(res, 404)
+            console.log("Nu A gasit resursa:", req.url);
+            return;
+        }
+        afisareEroare(res);
+    }
+});
 
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
