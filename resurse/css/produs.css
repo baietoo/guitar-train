@@ -1,3 +1,26 @@
+.produse-similare {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.produs-similar {
+    border: 1px solid #ddd;
+    padding: 16px;
+    width: calc(33.333% - 32px);
+    box-sizing: border-box;
+}
+
+.produs-similar figure {
+    margin: 0;
+    text-align: center;
+}
+
+.produs-similar img {
+    max-width: 100%;
+    height: auto;
+}
+
 h2{
     padding:0.4rem;
 }

@@ -195,16 +195,28 @@ app.get("/produse", function (req, res) {
 })
 
 app.get("/produs/:id", function (req, res) {
-    client.query(`select * from instrumente where id=${req.params.id}`, function (err, rez) {
+    client.query(`SELECT * FROM instrumente WHERE id=${req.params.id}`, function (err, rez) {
         if (err) {
             console.log(err);
             afisareEroare(res, 2);
+        } else {
+            const produs = rez.rows[0];
+            const categorie = produs.categorie;
+            
+            // Query to get similar products
+            client.query(`SELECT * FROM instrumente WHERE categorie='${categorie}' AND id != ${req.params.id} LIMIT 5`, function (err, similarRez) {
+                if (err) {
+                    console.log(err);
+                    afisareEroare(res, 2);
+                } else {
+                    res.render("pagini/produs", { prod: produs, similarProducts: similarRez.rows });
+                }
+            });
         }
-        else {
-            res.render("pagini/produs", { prod: rez.rows[0] })
-        }
-    })
-})
+    });
+});
+
+
 
 
 // Veți declara un app.get() general pentru calea "/*", care tratează orice cerere de forma /pagina randând fișierul pagina.ejs (unde "pagina" e un nume generic și trebuie să funcționeze pentru orice string). Atenție, acest app.get() trebuie să fie ultimul în lista de app.get()-uri.  Dacă pagina cerută nu există, se va randa o pagină specială de eroare 404 (în modul descris mai jos). 

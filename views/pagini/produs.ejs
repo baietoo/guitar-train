@@ -1,37 +1,57 @@
 <!DOCTYPE html>
-<html  lang="ro">
-    <head>
-        <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
-        <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
-        
-        <title>Cofetăria Dulcelind - home</title>
-        <%- include("../fragmente/head") %>     
-        <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
-    </head>
-    <body>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
+    <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
+    <title>Cofetăria Dulcelind - home</title>
+    <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
+    <%- include("../fragmente/head") %>     
+</head>
+<body>
     <%- include("../fragmente/header") %>
 
     <main>
         <section>
             <h2>Pagină produs</h2>
-                <article id="art-produs">
-                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
-                    <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
-                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
-                    <p>materiale: <span class="materiale"><%- locals.prod.materiale %> </span></p>
-                    <p>Corzi: <span class="corzi"><%- locals.prod.corzi %> </span></p>
-                    <p>Greutate: <span class="greutate"><%- locals.prod.greutate %> </span></p>
-                    <p>Categorie: <span class="categorie"><%- locals.prod.categorie %> </span></p>
-                    <p>Pentru diabetici: <span class="pt_stangaci"><%- locals.prod.pt_stangaci %> </span></p>
-                    <p>Data adăugare: <span class="categorie"><%- locals.prod.data_adaugare %> </span></p>
-                    <figure class="imag-produs">
-                        <img  src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
-                    </figure>    
-                </article>
-            
+            <article id="art-produs">
+                <h3><span class="nume"><%- prod.nume %></span></h3>
+                <p>Pret: <span class="pret"><%- prod.pret %></span> lei</p>
+                <p>Descriere: <span class="descriere"><%- prod.descriere %></span></p>
+                <p>Materiale: <span class="materiale"><%- prod.materiale %></span></p>
+                <p>Corzi: <span class="corzi"><%- prod.corzi %></span></p>
+                <p>Greutate: <span class="greutate"><%- prod.greutate %></span> g</p>
+                <p>Categorie: <span class="categorie"><%- prod.categorie %></span></p>
+                <p>Pentru diabetici: <span class="pt_diabetici"><%- prod.pt_diabetici %></span></p>
+                <p>Data adăugare: <span class="data_adaugare"><%- prod.data_adaugare %></span></p>
+                <figure class="imag-produs">
+                    <img src="/resurse/imagini/produse/<%- prod.imagine %>" alt="imagine <%- prod.nume %>">
+                </figure>    
+            </article>
+        </section>
+
+        <!-- Similar Products Section -->
+        <section>
+            <h2>Produse similare</h2>
+            <div class="produse-similare">
+                <% similarProducts.forEach(function(similarProd) { %>
+                    <article class="produs-similar">
+                        <h3><a href="/produs/<%= similarProd.id %>"><%- similarProd.nume %></a></h3>
+                        <figure>
+                            <a href="/produs/<%= similarProd.id %>">
+                                <img src="/resurse/imagini/produse/<%- similarProd.imagine %>" alt="imagine <%- similarProd.nume %>">
+                            </a>
+                        </figure>
+                        <p>Preț: <%- similarProd.pret %> lei</p>
+                        <p>Greutate: <%- similarProd.greutate %> g</p>
+                        <p>Categorie: <%- similarProd.categorie %></p>
+                    </article>
+                <% }); %>
+            </div>
         </section>
     </main>
 
     <%- include("../fragmente/footer") %>
-    </body>
+</body>
 </html>
