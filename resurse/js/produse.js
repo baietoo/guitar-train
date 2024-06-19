@@ -1,9 +1,5 @@
 window.addEventListener('load', function() {
-    document.getElementById("inp-pret").onchange = function() {
-        document.getElementById("infoRange").innerHTML = `(${this.value})`;
-    };
-
-    document.getElementById("filtrare").onclick = function() {
+    function filterProducts() {
         let val_nume = removeDiacritics(document.getElementById("inp-nume").value.toLowerCase());
 
         let radiobuttons = document.getElementsByName("gr_rad");
@@ -55,6 +51,19 @@ window.addEventListener('load', function() {
 
         // Display message if no products are visible
         document.getElementById("no-products-message").style.display = anyVisible ? "none" : "block";
+    }
+
+    // Attach onchange events to filters
+    document.getElementById("inp-nume").onchange = filterProducts;
+    document.getElementById("inp-pret").onchange = function() {
+        document.getElementById("infoRange").innerHTML = `(${this.value})`;
+        filterProducts();
+    };
+    document.getElementById("inp-categorie").onchange = filterProducts;
+
+    let radiobuttons = document.getElementsByName("gr_rad");
+    for (let r of radiobuttons) {
+        r.onchange = filterProducts;
     }
 
     document.getElementById("resetare").onclick = function() {
@@ -119,6 +128,9 @@ window.addEventListener('load', function() {
             }
         }
     }
+
+    // Initialize the filter
+    filterProducts();
 });
 
 document.addEventListener('DOMContentLoaded', function() {
