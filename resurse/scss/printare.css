@@ -1,11 +1,9 @@
-#watermark,
-#banner {
+#watermark {
   display: none;
 }
 
 @media print {
-  #watermark,
-  #banner {
+  #watermark {
     display: block;
   }
   #banner {

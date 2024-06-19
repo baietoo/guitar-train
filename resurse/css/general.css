@@ -14,6 +14,40 @@ body {
 
 }
 
+body.dark {
+    --padding: 20px;
+    --dim-spatiere: 150px;
+    --maro: #f1edd6;
+    --albastru: #134453;
+    --albastru-inchis: #8CBEB2;
+    --crem: #5C4B51;
+    --portocaliu: #F06060;
+    --rosu: #F3B562;
+    padding-left: var(--dim-spatiere);
+    padding-right: var(--dim-spatiere);
+    font-size: 1em;
+    font-family: "Nunito Sans", sans-serif;
+    background: linear-gradient(to right, #393737, #5e432e);
+
+}
+
+body.light {
+    --padding: 20px;
+    --dim-spatiere: 150px;
+    --maro: #5C4B51;
+    --albastru: #8CBEB2;
+    --albastru-inchis: #134453;
+    --crem: #f1edd6;
+    --portocaliu: #F3B562;
+    --rosu: #F06060;
+    padding-left: var(--dim-spatiere);
+    padding-right: var(--dim-spatiere);
+    font-size: 1em;
+    font-family: "Nunito Sans", sans-serif;
+    background-color: var(--crem);
+    color: var(--albastru-inchis);
+}
+
 header {
     background-color: var(--rosu);
     color: var(--crem);
