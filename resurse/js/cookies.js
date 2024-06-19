@@ -40,10 +40,10 @@ window.addEventListener("load", function(){
         document.getElementById("banner").style.display="none"
     }
     // adauga un cookie cu numarul de filtrari
-    this.document.getElementById("filtrare").onclick=function(){
-        let nrFiltrari=getCookie("nrFiltrari") || 0;
-        nrFiltrari++;
-        setCookie("nrFiltrari",nrFiltrari,10000);
-    }
+    // this.document.getElementById("filtrare").onclick=function(){
+    //     let nrFiltrari=getCookie("nrFiltrari") || 0;
+    //     nrFiltrari++;
+    //     setCookie("nrFiltrari",nrFiltrari,10000);
+    // }
 
 })
