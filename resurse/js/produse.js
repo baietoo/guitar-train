@@ -50,26 +50,7 @@ window.addEventListener('load', function() {
             if (cond1 && cond2 && cond3 && cond4){
                 prod.style.display="block";
             }
-            // daca nu sunt produse afisate, afisam un mesaj
-            if (document.getElementById("mesaj")){
-                document.getElementById("mesaj").remove();
-            }
-            
         }
-        let mesaj=document.createElement("p");
-        mesaj.id="mesaj";
-        mesaj.innerHTML="Nu exista produse care sa corespunda criteriilor de cautare";
-        let gasit=false;
-        for (let prod of produse){
-            if (prod.style.display!="none"){
-                gasit=true;
-                break;
-            }
-        }
-        if (!gasit){
-            document.getElementById("produse").appendChild(mesaj);
-        }
-        
     }
 
     document.getElementById("resetare").onclick= function(){
@@ -141,3 +122,28 @@ window.addEventListener('load', function() {
 
 
 })
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const produse = document.querySelectorAll('.produs');
+    const categorii = {};
+
+    produse.forEach(prod => {
+        const categorie = prod.getAttribute('data-categorie');
+        const pret = parseFloat(prod.getAttribute('data-pret'));
+
+        if (!categorii[categorie] || categorii[categorie].pret > pret) {
+            categorii[categorie] = { element: prod, pret: pret };
+        }
+    });
+
+    for (const cat in categorii) {
+        const produsIeftin = categorii[cat].element;
+        const marker = document.createElement('div');
+        marker.textContent = 'Cel mai ieftin produs';
+        marker.style.color = 'red';
+        marker.style.fontWeight = 'bold';
+        produsIeftin.querySelector('.info-prod').appendChild(marker);
+        produsIeftin.style.border = '6px solid red';
+    }
+});

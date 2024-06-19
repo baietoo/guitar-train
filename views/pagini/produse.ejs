@@ -63,7 +63,7 @@
             <div class="grid-produse">
                 <% for( let prod of locals.produse) { %>
                     <!-- aici adaugam produsul din index.js res.render -->
-                    <article class="produs" >
+                    <article class="produs" data-categorie="<%- prod.categorie %>" data-pret="<%- prod.pret %>">
                         <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
                         <div class="info-prod">
                             <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>

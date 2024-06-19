@@ -21,15 +21,5 @@ CREATE TABLE IF NOT EXISTS instrumente (
 );
 
 INSERT into instrumente (nume,descriere,pret, greutate, corzi, tip_produs, categorie, materiale, pt_stangaci, imagine) VALUES 
-('Schecter omen 6', 'chitara electrica', 2000 , 7, 6, 'electric', 'chitara', '{"mahon","lemn trandafir"}', False, 'schecter-omen-6.jpg'),
-
-('Takamine', 'Chitara acustica', 4000 , 5, 6, 'acustic', 'chitara', '{"lemn de tei"}', False, 'takamine-acustic-6.jpg'),
-
-('Pearl', 'Tobe profesioniste', 10000 , 80, 0, 'acustic', 'tobe', '{"lemn stejar", "membrana cauciuc"}', False,'pearl-tobe.jpg'),
-
-('Ibanez', 'Bass electric', 3000 , 5, 4, 'electric', 'bass', '{"lemn de tei"}', False, 'ibanez-bass.jpg'),
-   
-('Yamaha', 'Chitara electroacustica', 5000 , 6, 6, 'electroacustic', 'chitara', '{"lemn de tei"}', False, 'yamaha-electroacustic.jpg');
-
-
-;
+('Millenium', 'Tobe profesioniste', 10000 , 80, 0, 'acustic', 'tobe', '{"lemn fag", "membrana cauciuc"}', False,'millenium-tobe.jpg'),
+('Schecter Damien', 'Bass electric', 3000 , 5, 4, 'electric', 'bass', '{"lemn de mahon"}', False, 'schecter-bass.jpg');
