@@ -4,6 +4,7 @@ window.addEventListener('load', function() {
 
         let radiobuttons = document.getElementsByName("gr_rad");
         let val_corzi;
+        let val_max_corzi = document.getElementById("inp-max-corzi").value;
         for (let r of radiobuttons) {
             if (r.checked) {
                 val_corzi = r.value;
@@ -21,7 +22,7 @@ window.addEventListener('load', function() {
         let val_pret = document.getElementById("inp-pret").value;
 
         let val_categ = document.getElementById("inp-categorie").value;
-
+        let val_stangaci = document.getElementById("inp-stangaci").checked;
         var produse = document.getElementsByClassName("produs");
         let anyVisible = false;
 
@@ -42,8 +43,11 @@ window.addEventListener('load', function() {
             let categorie = prod.getElementsByClassName("val-categorie")[0].innerHTML;
 
             let cond4 = (val_categ == "toate" || categorie == val_categ);
-
-            if (cond1 && cond2 && cond3 && cond4) {
+            let stangaci = prod.getAttribute('data-stangaci') === 'true';
+            
+            let cond5 = (!val_stangaci || (val_stangaci && stangaci));
+            let cond6 = (!val_max_corzi || corzi <= val_max_corzi);
+            if (cond1 && cond2 && cond3 && cond4 && cond5 && cond6) {
                 prod.style.display = "block";
                 anyVisible = true;
             }
@@ -55,6 +59,8 @@ window.addEventListener('load', function() {
 
     // Attach onchange events to filters
     document.getElementById("inp-nume").onchange = filterProducts;
+    document.getElementById("inp-stangaci").onchange = filterProducts;
+    document.getElementById("inp-max-corzi").onchange = filterProducts;
     document.getElementById("inp-pret").onchange = function() {
         document.getElementById("infoRange").innerHTML = `(${this.value})`;
         filterProducts();
@@ -71,6 +77,8 @@ window.addEventListener('load', function() {
         document.getElementById("inp-pret").value = document.getElementById("inp-pret").min;
         document.getElementById("inp-categorie").value = "toate";
         document.getElementById("i_rad4").checked = true;
+        document.getElementById("inp-max-corzi").value = "";
+        document.getElementById("inp-stangaci").checked = false;
         var produse = document.getElementsByClassName("produs");
         document.getElementById("infoRange").innerHTML = "(0)";
         for (let prod of produse) {

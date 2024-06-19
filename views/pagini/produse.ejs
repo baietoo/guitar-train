@@ -39,6 +39,14 @@
             </select>
         </label>
 
+        <label> Stângaci:
+            <input type="checkbox" id="inp-stangaci">
+        </label>
+
+        <label> Număr maxim de corzi:
+            <input type="number" id="inp-max-corzi" min="0" step="1">
+        </label>
+
         <p>
             <!-- actionam butonul de filtrare -->
         <button id="filtrare">Filtreaza</button> 
@@ -64,7 +72,7 @@
             <div class="grid-produse">
                 <% for( let prod of locals.produse) { %>
                     <!-- aici adaugam produsul din index.js res.render -->
-                    <article class="produs" data-categorie="<%- prod.categorie %>" data-pret="<%- prod.pret %>">
+                    <article class="produs" data-categorie="<%- prod.categorie %>" data-pret="<%- prod.pret %>"  data-stangaci="<%- prod.pt_stangaci %>">
                         <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
                         <div class="info-prod">
                             <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>

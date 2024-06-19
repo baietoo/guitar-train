@@ -1,0 +1,143 @@
+nav {
+  background-color: var(--maro);
+}
+
+.c1 {
+  font-size: 2em;
+}
+
+#hamburger, #ch-menu, #acasa-mediu {
+  display: none;
+}
+
+.meniu li:hover > a, .meniu li:hover > div {
+  color: var(--albastru-inchis);
+  transition: all 1s linear;
+}
+
+.meniu, .meniu * {
+  margin: 0;
+  padding: 0;
+}
+
+.meniu {
+  display: flex;
+  list-style-type: none;
+  align-items: flex-start;
+}
+.meniu a, .meniu a:visited, .meniu div {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  color: var(--albastru-inchis);
+  line-height: 2rem;
+  cursor: pointer;
+  color: var(--crem);
+}
+.meniu li {
+  font-weight: bold;
+  border: 1px solid var(--crem);
+  padding: 4px;
+  height: 2rem;
+  width: var(100px);
+}
+.meniu li:hover {
+  box-shadow: inset 0 0 10px var(--albastru);
+  transition: all 0.7s;
+}
+.meniu li:hover > a, .meniu li:hover > div {
+  color: var(--crem);
+}
+.meniu li:hover ul {
+  display: block;
+  transform: scaleY(0);
+  opacity: 0;
+  animation: animatie_submeniu 0.7s linear forwards;
+  transform-origin: top;
+}
+.meniu ul {
+  display: none;
+  list-style-type: none;
+  position: absolute;
+  z-index: 10;
+  background-color: var(--albastru-inchis);
+  color: var(--albastru);
+}
+
+@media (max-width: 576px) {
+  .meniu {
+    display: none;
+  }
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: var(--crem);
+  position: absolute;
+  transition: transform 0.3s ease;
+  display: none;
+}
+.line:nth-child(1) {
+  top: 0;
+}
+.line:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.line:nth-child(3) {
+  bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .hamburger-menu {
+    display: block;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+  }
+  .hamburger-menu .line {
+    display: block;
+  }
+}
+.hamburger-menu:hover {
+  transition: all 0.7s;
+}
+.hamburger-menu.active {
+  transition: all 0.7s;
+}
+.hamburger-menu.active .line:nth-child(1) {
+  transform: translateY(450%) rotate(45deg);
+}
+.hamburger-menu.active .line:nth-child(2) {
+  display: none;
+}
+.hamburger-menu.active .line:nth-child(3) {
+  transform: translateY(-450%) rotate(-45deg);
+}
+.hamburger-menu.active + ul.meniu {
+  display: block;
+  transform-origin: 0 0;
+  position: relative;
+  z-index: 2;
+  animation: aparitie_hamburger 1 0.7s linear forwards;
+}
+
+@keyframes animatie_submeniu {
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+@keyframes aparitie_hamburger {
+  0% {
+    opacity: 0;
+    transform: scaleY(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1, 1);
+  }
+}
