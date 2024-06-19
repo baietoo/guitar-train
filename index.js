@@ -119,6 +119,7 @@ initImagini();
 
 
 
+// Functia de compilare SCSS
 function compileazaScss(caleScss, caleCss) {
     console.log("cale:", caleCss);
     if (!caleCss) {
@@ -150,6 +151,48 @@ function compileazaScss(caleScss, caleCss) {
 
     console.log("Compilare SCSS reușită:", caleCss);
 }
+
+// Functia de curatare a fisierelor vechi din backup
+function curataBackup(folderBackup, T) {
+    const currentTime = Date.now();
+    const TMilliseconds = T * 60 * 1000; // Convertim T in milisecunde
+
+    fs.readdir(folderBackup, (err, files) => {
+        if (err) {
+            console.error("Eroare la citirea folderului de backup:", err);
+            return;
+        }
+
+        files.forEach(file => {
+            const filePath = path.join(folderBackup, file);
+            fs.stat(filePath, (err, stats) => {
+                if (err) {
+                    console.error("Eroare la obtinerea informatiilor despre fisier:", err);
+                    return;
+                }
+
+                const fileAge = currentTime - stats.mtimeMs;
+                if (fileAge > TMilliseconds) {
+                    fs.unlink(filePath, err => {
+                        if (err) {
+                            console.error("Eroare la stergerea fisierului:", err);
+                        } else {
+                            console.log("Fisier sters:", filePath);
+                        }
+                    });
+                }
+            });
+        });
+    });
+}
+
+// Setam un interval pentru a verifica si curata periodic folderul de backup
+const folderBackup = path.join(obGlobal.folderBackup, "resurse/css");
+const T = 1; // Intervalul T in minute (de exemplu, 60 minute)
+
+setInterval(() => {
+    curataBackup(folderBackup, T);
+}, T * 60 * 1000); // Verifica la fiecare T minute
 
 //compileazaScss("a.scss");
 vFisiere = fs.readdirSync(obGlobal.folderScss);
