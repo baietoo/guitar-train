@@ -123,25 +123,32 @@ function compileazaScss(caleScss, caleCss) {
     console.log("cale:", caleCss);
     if (!caleCss) {
         let numeFisExt = path.basename(caleScss);
-        let numeFis = numeFisExt.split(".")[0] ///"a.scss" -> ["a","scss"]
+        let numeFis = numeFisExt.split(".")[0]; // "a.scss" -> ["a","scss"]
         caleCss = numeFis + ".css";
     }
     if (!path.isAbsolute(caleScss))
-        caleScss = path.join(obGlobal.folderScss, caleScss)
+        caleScss = path.join(obGlobal.folderScss, caleScss);
     if (!path.isAbsolute(caleCss))
-        caleCss = path.join(obGlobal.folderCss, caleCss)
+        caleCss = path.join(obGlobal.folderCss, caleCss);
+
     let caleBackup = path.join(obGlobal.folderBackup, "resurse/css");
     if (!fs.existsSync(caleBackup)) {
-        fs.mkdirSync(caleBackup, { recursive: true })
+        fs.mkdirSync(caleBackup, { recursive: true });
     }
-    // la acest punct avem cai absolute in caleScss si caleCss
+
+    // la acest punct avem cai absolute în caleScss și caleCss
     let numeFisCss = path.basename(caleCss);
     if (fs.existsSync(caleCss)) {
-        fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup, "resurse/css", numeFisCss)) // +(new Date())-getTime()
+        // Adăugăm timestamp în numele fișierului de backup
+        let timestamp = Date.now();
+        let numeFisCssBackup = numeFisCss.replace(/\.css$/, `_${timestamp}.css`);
+        fs.copyFileSync(caleCss, path.join(caleBackup, numeFisCssBackup));
     }
-    rez = sass.compile(caleScss, { "sourceMap": true });
-    fs.writeFileSync(caleCss, rez.css)
-    //console. log("Compilare SCSS",rez);
+
+    let rez = sass.compile(caleScss, { "sourceMap": true });
+    fs.writeFileSync(caleCss, rez.css);
+
+    console.log("Compilare SCSS reușită:", caleCss);
 }
 
 //compileazaScss("a.scss");
