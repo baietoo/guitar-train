@@ -5,7 +5,7 @@ window.addEventListener('load', function() {
     }
 
     this.document.getElementById("filtrare").onclick = function() {
-        let val_nume=document.getElementById("inp-nume").value.toLowerCase();
+        let val_nume=removeDiacritics(document.getElementById("inp-nume").value.toLowerCase());
 
         let radiobuttons = document.getElementsByName("gr_rad");
         let val_corzi;
@@ -147,3 +147,18 @@ document.addEventListener('DOMContentLoaded', function() {
         produsIeftin.style.border = '6px solid red';
     }
 });
+
+// Adaugă funcția removeDiacritics aici
+function removeDiacritics(str) {
+    const diacriticsMap = {
+        'ă': 'a', 'â': 'a', 'î': 'i', 'ș': 's', 'ț': 't',
+        'Ă': 'A', 'Â': 'A', 'Î': 'I', 'Ș': 'S', 'Ț': 'T',
+        'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
+        'à': 'a', 'è': 'e', 'ì': 'i', 'ò': 'o', 'ù': 'u',
+        // Add more mappings as needed
+    };
+
+    return str.replace(/[^\u0000-\u007E]/g, function(a) {
+        return diacriticsMap[a] || a;
+    });
+}
